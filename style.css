@@ -1,0 +1,529 @@
+/* Basic resets & typography */
+body, h1, h2, h3, h4, p, ul, li, form, input, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }
+
+/* Containers */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar, .dash-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+}
+.nav-container, .dash-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e3a8a; /* a dark bluish color for branding */
+}
+.nav-links a {
+  margin-right: 20px;
+  color: #555;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #1e3a8a;
+  font-weight: 600;
+}
+.nav-cta .btn-sm {
+  margin-left: 10px;
+}
+.plan-badge {
+  font-size: 0.9rem;
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.btn-upgrade {
+  background: #f97316 !important; /* upgrade button in orange */
+  border: none !important;
+  color: #fff !important;
+}
+
+/* Hero section (landing) */
+.hero {
+  background: #f9fafb;
+  padding: 60px 0;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-text {
+  max-width: 600px;
+}
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+.hero-features {
+  text-align: left;
+  margin: 20px 0;
+}
+.hero-features li {
+  margin-bottom: 8px;
+}
+/* Bold parts in hero features (like checkmarks) can stand out */
+.hero-features li::marker {
+  content: '✔️';
+  color: #10b981;
+}
+.hero-image img {
+  margin-top: 30px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* How summary section on home */
+.how-summary {
+  padding: 40px 0;
+}
+.how-content h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.step {
+  flex: 0 0 48%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #3b82f6;
+  margin-right: 10px;
+}
+.step p {
+  line-height: 1.5;
+}
+
+/* FAQ preview on home */
+.faq-preview {
+  background: #f3f4f6;
+  padding: 50px 0;
+}
+.faq-content h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+.faq-item {
+  margin-bottom: 20px;
+}
+.faq-item h3 {
+  font-size: 1.1rem;
+  color: #111;
+  margin-bottom: 5px;
+}
+.faq-item p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Footer */
+.footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 40px 0 20px;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer-col {
+  flex: 1 1 200px;
+  margin: 10px 0;
+}
+.footer-col h4 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+.footer-col ul li a {
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+.footer-bottom {
+  border-top: 1px solid #374151;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.popup-inner {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+}
+.popup-inner h3 {
+  margin-bottom: 15px;
+}
+.popup-inner p {
+  margin-bottom: 20px;
+}
+.popup-close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.popup-note {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Auth (login/signup) page */
+.auth-page {
+  background: #f9fafb;
+}
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.auth-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  display: block;
+  margin-bottom: 30px;
+}
+.auth-form {
+  text-align: left;
+}
+.auth-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: #111;
+}
+.auth-form p {
+  margin-bottom: 20px;
+  color: #4b5563;
+}
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+.auth-form label {
+  font-size: 0.9rem;
+  margin: 8px 0 4px;
+}
+.auth-form input {
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+.auth-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.2);
+}
+.auth-form .auth-switch {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+.auth-form .auth-switch a {
+  color: #2563eb;
+}
+.error-msg {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  height: 1.2em;
+  margin-top: 5px;
+}
+
+/* Dashboard styles */
+.dash-navbar {
+  background: #1e3a8a;
+  color: #fff;
+}
+.dash-nav-container {
+  height: 50px;
+}
+.dash-nav-links a {
+  margin-right: 15px;
+  color: #c7d2fe;
+  font-size: 0.95rem;
+}
+.dash-nav-links a.active {
+  font-weight: 600;
+  color: #fff;
+}
+.dash-nav-links a:hover {
+  color: #fff;
+}
+.dash-nav-right .btn {
+  margin-left: 10px;
+}
+
+/* Main dashboard content */
+.dash-main {
+  padding: 20px 0 40px;
+}
+.tool-section {
+  display: none;
+}
+.tool-section h2 {
+  margin-bottom: 10px;
+}
+.tool-section p {
+  margin-bottom: 20px;
+}
+.tool-section.active {
+  display: block;
+}
+/* Ensure by default, only active (via JS adding a class or toggling hidden) is shown. */
+#tool-article { display: block; } /* default active */
+.hidden { display: none !important; }
+
+.generate-form {
+  margin-bottom: 20px;
+}
+.generate-form label {
+  font-weight: 500;
+}
+.generate-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.generate-form button {
+  display: inline-block;
+}
+
+/* Output areas */
+.output-section {
+  background: #f3f4f6;
+  padding: 15px;
+  border-radius: 5px;
+  min-height: 100px;
+  position: relative;
+}
+.output-section p {
+  margin-bottom: 10px;
+}
+.output-section h1, .output-section h2, .output-section h3 {
+  margin-top: 1em;
+}
+.output-section .citation {
+  font-size: 0.85rem;
+  color: #374151;
+}
+.image-output img {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Loading indicator */
+.loading {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111827;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  opacity: 0.9;
+  z-index: 999;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  background: #3b82f6;
+  color: #fff;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #2563eb;
+}
+.btn-primary {
+  background: #3b82f6;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #2563eb;
+}
+.btn-secondary {
+  background: #6b7280;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #4b5563;
+}
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 6px 12px;
+}
+.btn-lg {
+  font-size: 1.125rem;
+  padding: 12px 20px;
+}
+
+/* Cards (for pricing) */
+.pricing-section {
+  padding: 60px 0;
+  text-align: center;
+}
+.pricing-table h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.pricing-table p {
+  margin-bottom: 40px;
+  color: #555;
+}
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.plan-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 280px;
+  text-align: left;
+  position: relative;
+}
+.plan-card-pro {
+  border: 2px solid #3b82f6;
+}
+.plan-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+.plan-card h3 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+.plan-card h3 span {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+.plan-features {
+  margin: 15px 0;
+}
+.plan-features li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.plan-features li strong {
+  color: #111;
+}
+.plan-note {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+.pricing-section .btn {
+  width: 100%;
+  text-align: center;
+}
+.disclaimer {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 30px;
+}
+
+/* Responsive tweaks */
+@media(max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  .hero-text {
+    text-align: center;
+  }
+  .steps {
+    flex-direction: column;
+  }
+  .step {
+    flex: 1 1 100%;
+    margin-bottom: 15px;
+  }
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .plan-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

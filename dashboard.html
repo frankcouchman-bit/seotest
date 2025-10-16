@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – SEOscribe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- We might include a simple icon library for UI icons if needed -->
+</head>
+<body class="dashboard-page">
+  <!-- Dashboard Nav -->
+  <header class="dash-navbar">
+    <div class="container dash-nav-container">
+      <span class="logo">SEOscribe</span>
+      <nav class="dash-nav-links">
+        <a href="#" id="nav-link-article" class="active" onclick="showTool('article')">📝 Article Writer</a>
+        <a href="#" id="nav-link-image" onclick="showTool('image')">🎨 Image Generator</a>
+      </nav>
+      <div class="dash-nav-right">
+        <span id="plan-indicator" class="plan-badge">Free Plan</span>
+        <a href="pricing.html" id="upgrade-link" class="btn btn-sm btn-upgrade hidden">Upgrade</a>
+        <button class="btn btn-sm" onclick="handleLogout()">Logout</button>
+      </div>
+    </div>
+  </header>
+  
+  <main class="dash-main container">
+    <!-- Article Writer Tool -->
+    <div id="tool-article" class="tool-section">
+      <h2>AI Article Writer</h2>
+      <p>Generate a full-length article by entering a title or topic below.</p>
+      <form onsubmit="return false;" class="generate-form">
+        <label for="article-title">Article Title/Topic:</label>
+        <input type="text" id="article-title" placeholder="e.g. The Future of Electric Vehicles" required />
+        <!-- Optional: additional inputs like tone or keywords could go here -->
+        <button type="submit" class="btn btn-primary" onclick="generateArticle()">Generate Article</button>
+      </form>
+      <div id="article-output" class="output-section">
+        <!-- Article content or loading state will appear here -->
+      </div>
+    </div>
+    
+    <!-- Image Generator Tool -->
+    <div id="tool-image" class="tool-section hidden">
+      <h2>AI Image Generator</h2>
+      <p>Create an image to complement your article or for any need. Describe what you want below.</p>
+      <form onsubmit="return false;" class="generate-form">
+        <label for="image-prompt">Image Description:</label>
+        <input type="text" id="image-prompt" placeholder="e.g. A futuristic electric car on a road" required />
+        <button type="submit" class="btn btn-primary" onclick="generateImage()">Generate Image</button>
+      </form>
+      <div id="image-output" class="output-section image-output">
+        <!-- Generated image or loading indicator will appear here -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Template for loading spinner/animation (could be inserted via JS) -->
+  <div id="loading-spinner" class="loading hidden">⌛ Generating, please wait...</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="main.js"></script>
+</body>
+</html>
